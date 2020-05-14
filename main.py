@@ -96,8 +96,8 @@ kelima, = plt.plot(t,x,color='b',label="Clean")
 keenam, = plt.plot(t,xNoise,color='g',label="Noise")
 plt.legend(handles=[kelima,keenam], loc='upper right')
 
-#Filter menggunakan di video :)
-#Menggunakan metode Invers DFT untuk Clean Noise
+#Filter menggunakan cara yang di contohkan di video :)
+#Dan menggunakan metode Invers DFT untuk Clean Noise
 dftKU = DFT(xNoise+x,N)
 print("xNoise+x")
 print(*dftKU, sep = "\n")
