@@ -1,2 +1,4 @@
-# Filter-wave-Sin-with-IDFT-and-find-Magnitude-with-DFT-in-python
-Penunjang tugas akhir Pemrosesan Sinyal 2020
+# Mencari nilai magnitude dengan DFT dan memfilter noise dengan IDFT
+
+Seluruh penjelasan pendukungnya ada di dalam file dengan diberikan beberapa komentar didalamnya
+Terimakasih
