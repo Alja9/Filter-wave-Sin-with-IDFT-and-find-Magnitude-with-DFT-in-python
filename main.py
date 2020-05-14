@@ -36,7 +36,7 @@ F = 4
 Fs = 128
 N = Fs
 
-t = np.arange(0,1,0.0078125)
+t = np.arange(0,1,0.0078125) #Ini menjadi garis X di untuk semua plot
 #Stepnya berdasarkan max time / jumlah n jadi 1/128 = 0.0078125
 print("t")
 print(*t, sep = "\n")
@@ -67,7 +67,7 @@ print("Mg_n[x]")
 print(*np.abs(DFT(x,N)), sep = "\n")
 print('----\n')
 
-xNoise = x + 0.5 *np.random.randn(len(x))
+xNoise = x + 0.5 *np.random.randn(len(x)) #Pembuatan gelombang Noisenya
 #Noise
 plt.subplot(3,2,3)
 plt.ylabel("x[n]")
@@ -88,7 +88,7 @@ print("MgNoise")
 print(*np.abs(DFT(xNoise,N)), sep = "\n")
 print('----\n')
 
-#x_Clean and Noise
+#Penggabungan clean_x + Noise
 plt.subplot(3,2,5)
 plt.ylabel("x[n]")
 plt.xlabel("t")
@@ -105,7 +105,7 @@ print('----\n')
 PSD = dftKU * np.conj(dftKU)/len(n)
 SinglSided = np.arange(1,np.floor(len(n)/2),dtype='int')
 idc = PSD > 5 #Sebab Nilai NOISEnya memiliki perhitungan F/Fs yang membuat nilainya harus dikecilkan
-PSDclean = PSD * idc
+PSDclean = PSD * idc #Bila ada pesan warning yang diberikan, itu karena nilai yang dihasilkan berupa imajiner
 dftKU = idc * dftKU
 dftFLT = IDFT(dftKU)
 
@@ -113,4 +113,4 @@ plt.subplot(3,2,6)
 ketujuh, = plt.plot(t,dftFLT,color='r',label="Filter")
 plt.legend(handles=[ketujuh], loc='upper right')
 
-plt.show()
+plt.show() #Total ada 6 plot yang dihasilkan
